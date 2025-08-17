@@ -1,8 +1,180 @@
 body {
-  background: pink;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  min-height: 100vh;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+header h1 {
+  margin: 0;
+  color: white;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.main-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.calculator-section {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar {
+  width: 350px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.sidebar-header {
+  background: #4a5568;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar-header h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.3em;
+}
+
+#filter-input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.items-list {
+  height: 500px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.item-entry {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  margin: 2px 0;
+  background: #f7fafc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.item-entry:hover {
+  background: #e2e8f0;
+}
+
+.item-name {
+  flex: 1;
+}
+
+.item-points {
+  font-weight: bold;
+  color: #4a5568;
+}
+
+.form-group {
+  margin-bottom: 20px;
 }
 
 label {
-  display: inline-block;
-  width: 150px;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #4a5568;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 100%;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.level-display {
+  background: #667eea;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#level-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#result {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f7fafc;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+#points-result {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2d3748;
+  margin: 0;
+}
+
+#item-results p {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #4a5568;
 }
