@@ -6,27 +6,72 @@
     <title>satisfactory_coupons</title>
   </head>
   <body>
-    <div class="container">
-      <form id="calc-form">
-        <div>
-          <label>Approx. Coupon Cost</label>
-          <input type="number" name="coupon-cost" />
-        </div>
-        <div>
-          <label>Coupon Level</label>
-          <input type="number" name="coupon-level" />
-        </div>
-        <div>
-          <label>Coupon Count Desired</label>
-          <input type="number" name="desired-count" />
-        </div>
-        <button type="submit">Calculate</button>
-      </form>
+    <header>
+      <h1>Satisfactory Coupons Calculator</h1>
+    </header>
 
-      <div id="result">
-        <p></p>
+    <div class="main-container">
+      <div class="calculator-section">
+        <form id="calc-form">
+          <div class="form-group">
+            <label>Approx. Coupon Cost</label>
+            <input type="number" name="coupon-cost" />
+          </div>
+
+          <div id="coupon-level-display" class="level-display">
+            <span id="level-text">Coupon Level: --</span>
+          </div>
+
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="manual-level-toggle" /> Manually set
+              coupon level
+            </label>
+          </div>
+
+          <div class="form-group" id="manual-level-group" style="display: none">
+            <label>Coupon Level</label>
+            <input type="number" name="coupon-level" />
+          </div>
+
+          <div class="form-group">
+            <label>Coupon Count Desired</label>
+            <input type="number" name="desired-count" />
+          </div>
+
+          <div class="form-group">
+            <label>Select Item</label>
+            <select name="item-select" id="item-select">
+              <option value="">Choose an item...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Items per Minute</label>
+            <input type="number" name="items-per-minute" step="0.1" />
+          </div>
+
+          <button type="submit">Calculate</button>
+        </form>
+
+        <div id="result">
+          <p id="points-result"></p>
+          <div id="item-results" style="display: none">
+            <p id="items-needed"></p>
+            <p id="time-needed"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h3>Items & Point Values</h3>
+          <input type="text" id="filter-input" placeholder="Filter items..." />
+        </div>
+        <div id="items-list" class="items-list"></div>
       </div>
     </div>
   </body>
-  <script src="public/scripts/application.js"></script>
+  <script src="public/scripts/coupon.js" type="module"></script>
+  <script src="public/scripts/application.js" type="module"></script>
 </html>
