@@ -44,7 +44,7 @@ function pointsNeeded(level, count) {
   if (posInGroup !== 0) {
     let remainingInGroup = 3 - posInGroup;
     let take = Math.min(count, remainingInGroup);
-    totalPoints += take * (500 * group * group + 1000);
+    totalPoints += take * (250 * group * group + 1000);
     count -= take;
     group += 1;
   }
@@ -53,14 +53,14 @@ function pointsNeeded(level, count) {
   let fullGroups = Math.floor(count / 3);
   if (fullGroups > 0) {
     totalPoints +=
-      3 * (500 * sumSquares(group, group + fullGroups - 1) + 1000 * fullGroups);
+      3 * (250 * sumSquares(group, group + fullGroups - 1) + 1000 * fullGroups);
     group += fullGroups;
     count -= fullGroups * 3;
   }
 
   // Step 3: handle leftover coupons
   if (count > 0) {
-    totalPoints += count * (500 * group * group + 1000);
+    totalPoints += count * (250 * group * group + 1000);
   }
 
   return totalPoints;
@@ -70,9 +70,8 @@ const calculateCouponLevel = (approxPoints) => {
   if (!approxPoints) {
     return undefined;
   }
-  // const g = Math.round(Math.sqrt((approxPoints - 1000) / 500));
-  const g = Math.round(Math.sqrt((approxPoints - 1000) / 250));
 
+  const g = Math.round(Math.sqrt((approxPoints - 1000) / 250));
   const coupons = [3 * g + 1, 3 * g + 2, 3 * g + 3]; // three groups available
 
   return coupons[0];
