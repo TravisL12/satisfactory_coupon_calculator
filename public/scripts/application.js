@@ -16,8 +16,7 @@ const itemsList = document.getElementById("items-list");
 
 // Create array of all individual items with their point values
 const allItems = [];
-Object.entries(couponData).forEach(([itemsString, pointsString]) => {
-  const points = parseInt(pointsString.replace(/,/g, ""));
+Object.entries(couponData).forEach(([itemsString, points]) => {
   const items = itemsString.split(",").map((item) => item.trim());
   items.forEach((item) => {
     if (item) {
