@@ -1,0 +1,8 @@
+body {
+  background: pink;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+}
