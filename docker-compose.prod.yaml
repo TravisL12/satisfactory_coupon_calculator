@@ -5,7 +5,7 @@ services:
     hostname: satisfactory-client
     restart: always
     volumes:
-      - ./build:/usr/share/nginx/html
+      - ./dist:/usr/share/nginx/html
       - ./nginx/default.prod.conf:/etc/nginx/conf.d/default.conf
 
 networks:
